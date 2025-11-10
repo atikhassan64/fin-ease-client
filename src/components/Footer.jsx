@@ -7,7 +7,7 @@ import { FaXTwitter } from 'react-icons/fa6';
 const Footer = () => {
     return (
         <footer className="border-t border-amber-100 text-secondary py-10 mt-16">
-            <div className="max-w-[1200px] mx-auto px-6 grid md:grid-cols-4 sm:grid-cols-2 gap-8">
+            <div className="max-w-[1200px] mx-auto px-4 grid md:grid-cols-4 sm:grid-cols-2 gap-8">
 
                 {/* Logo & Website Name */}
                 <div>
@@ -30,8 +30,8 @@ const Footer = () => {
                 <div>
                     <h3 className="text-lg font-semibold text-secondary mb-3">Contact Us</h3>
                     <ul className="space-y-2 text-sm">
-                        <li>Email: <a className="hover:text-primary">support@finease.com</a></li>
-                        <li>Phone: <a className="hover:text-primary">+880 131518-7164</a></li>
+                        <li>Email: <a className="hover:text-primary cursor-pointer">support@finease.com</a></li>
+                        <li>Phone: <a className="hover:text-primary cursor-pointer">+880 131518-7164</a></li>
                         <li>Location: Dhaka, Bangladesh</li>
                     </ul>
                 </div>
