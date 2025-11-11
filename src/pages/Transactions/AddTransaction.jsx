@@ -54,7 +54,7 @@ const AddTransaction = () => {
                 <form onSubmit={handleSubmit} className="">
                     <div className='flex justify-between items-center gap-4'>
                         {/* Left */}
-                        <div>
+                        <div className='flex-1'>
                             {/* Type */}
                             <label className="label">Type</label>
                             <select name='type' className="w-full border border-amber-100 p-2 mb-4 outline-none ">
@@ -83,7 +83,7 @@ const AddTransaction = () => {
                         </div>
 
                         {/* Right */}
-                        <div>
+                        <div className='flex-1'>
                             {/* Category */}
                             <label className="label">Category</label>
                             <select name='category' className="w-full border p-2 border-amber-100 mb-4 outline-none">

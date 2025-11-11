@@ -5,7 +5,8 @@ const MyTransactions = () => {
     const { user } = use(AuthContext);
     const [transactions, setTransaction] = useState([]);
     const updateRef = useRef(null);
-    console.log(transactions)
+    const [id, setId] = useState(null);
+    // console.log(id)
 
     useEffect(() => {
         fetch(`http://localhost:3000/transactions?email=${user.email}`)
@@ -16,8 +17,40 @@ const MyTransactions = () => {
     }, [user])
 
 
-    const handleUpdate = () => {
+    const handleUpdate = (id) => {
         updateRef.current.showModal();
+        setId(id)
+    }
+    const handleUpdateTransaction = e => {
+        e.preventDefault();
+        const type = e.target.type.value;
+        const date = e.target.date.value;
+        const category = e.target.category.value;
+        const amount = e.target.amount.value;
+        const description = e.target.description.value;
+
+        const newUpdate = {
+            type: type,
+            category: category,
+            amount: amount,
+            description: description,
+            date: date,
+        }
+
+
+        fetch(`http://localhost:3000/transactions/${id}`, {
+            method: "PATCH",
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(newUpdate)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                setTransaction(prev => prev.map(t => t._id === id ? { ...t, ...newUpdate } : t));
+                updateRef.current.close();
+            })
     }
 
 
@@ -53,7 +86,7 @@ const MyTransactions = () => {
 
                             {/* Buttons */}
                             <div className="flex justify-between gap-2">
-                                <button onClick={handleUpdate} className="flex-1 btn btn-outline text-primary border-primary hover:text-white hover:bg-primary transition">
+                                <button onClick={() => handleUpdate(transaction._id)} className="flex-1 btn btn-outline text-primary border-primary hover:text-white hover:bg-primary transition">
                                     Update
                                 </button>
                                 <button className="flex-1 btn btn-outline text-secondary border-amber-100 hover:bg-accent transition">
@@ -70,9 +103,67 @@ const MyTransactions = () => {
 
             {/* Update modal */}
             <dialog ref={updateRef} className="modal modal-bottom sm:modal-middle">
-                <div className="modal-box">
-                    <h3 className="font-bold text-lg">Hello!</h3>
-                    <p className="py-4">Press ESC key or click the button below to close</p>
+                <div className="modal-box w-10/12">
+                    <h3 className="font-bold text-lg mb-4 text-primary">Update Transaction</h3>
+                    <form onSubmit={handleUpdateTransaction} className="">
+                        <div className='flex justify-between items-center gap-4'>
+                            {/* Left */}
+                            <div className='flex-1'>
+                                {/* Type */}
+                                <label className="label">Type</label>
+                                <select name='type' className="w-full border border-amber-100 p-2 mb-4 outline-none ">
+                                    <option>Income</option>
+                                    <option>Expense</option>
+                                </select>
+
+                                {/* Date */}
+                                <label className="label">Date</label>
+                                <input
+                                    type="date"
+                                    name='date'
+                                    className="w-full border p-2 border-amber-100 outline-none"
+                                />
+                            </div>
+
+                            {/* Right */}
+                            <div className='flex-1'>
+                                {/* Category */}
+                                <label className="label">Category</label>
+                                <select name='category' className="w-full border p-2 border-amber-100 mb-4 outline-none">
+                                    <option>Select Category</option>
+                                    <option>Salary</option>
+                                    <option>Food</option>
+                                    <option>Transport</option>
+                                    <option>Shopping</option>
+                                    <option>Bills</option>
+                                </select>
+
+                                {/* Amount */}
+                                <label className="label">Amount</label>
+                                <input
+                                    type="number"
+                                    name='amount'
+                                    placeholder="Enter Amount"
+                                    className="w-full border p-2 border-amber-100 outline-none"
+                                />
+                            </div>
+                        </div>
+
+                        {/* Description */}
+                        <label className="label mt-5">Description</label>
+                        <textarea
+                            name='description'
+                            placeholder="Description"
+                            className="w-full border p-2 border-amber-100 outline-none"
+                        ></textarea>
+
+                        {/* Submit button */}
+                        <input
+                            type="submit"
+                            value="Update Transaction"
+                            className='btn btn-outline w-full border-amber-100 hover:bg-accent mt-4 text-secondary'
+                        />
+                    </form>
                     <div className="modal-action">
                         <form method="dialog">
                             {/* if there is a button in form, it will close the modal */}
