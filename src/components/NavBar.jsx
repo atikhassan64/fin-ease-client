@@ -2,6 +2,7 @@ import React, { use, useState } from 'react';
 import logo from '../assets/FinEase-logo.png'
 import { Link, NavLink } from 'react-router';
 import { AuthContext } from '../context/AuthContext';
+import toast from 'react-hot-toast';
 
 const NavBar = () => {
 
@@ -11,10 +12,10 @@ const NavBar = () => {
     const handleLogOut = () => {
         logOutUser()
             .then(() => {
-                // toast.success('SignOut success');
+                toast.success('SignOut success');
             })
             .catch((error) => {
-                // toast.error(error.message);
+                toast.error(error.message);
             })
     }
 

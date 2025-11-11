@@ -1,8 +1,8 @@
 import React, { use, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router';
 import { FaEye, FaEyeSlash } from 'react-icons/fa';
-// import toast from 'react-hot-toast';
 import { AuthContext } from '../context/AuthContext';
+import toast from 'react-hot-toast';
 
 const Register = () => {
     const { createUser, setUser, user, loginWithGoogle, updateUser } = use(AuthContext);
@@ -38,11 +38,11 @@ const Register = () => {
             setError("Password must have at least one Lowercase letter!");
             return
         }
-        // else {
-        //     {
-        //         !user && toast.success("Registration successful!")
-        //     }
-        // }
+        else {
+            {
+                !user && toast.success("Registration successful!")
+            }
+        }
 
         createUser(email, password)
             .then((result) => {
@@ -53,13 +53,13 @@ const Register = () => {
                         e.target.reset();
                     })
                     .catch((error) => {
-                        // toast.error(error.message);
+                        toast.error(error.message);
                         setUser(user);
                     })
                 navigate(location.state || '/')
             })
             .catch((error) => {
-                // toast.error(error.message);
+                toast.error(error.message);
             })
     }
 
@@ -72,7 +72,7 @@ const Register = () => {
                 navigate(location.state || '/');
             })
             .catch((error) => {
-                // toast.error(error.message);
+                toast.error(error.message);
             })
     }
 
