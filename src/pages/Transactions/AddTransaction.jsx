@@ -1,5 +1,6 @@
 import React, { use } from 'react';
 import { AuthContext } from '../../context/AuthContext';
+import toast from 'react-hot-toast';
 
 const AddTransaction = () => {
     const { user } = use(AuthContext);
@@ -7,12 +8,13 @@ const AddTransaction = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         const type = e.target.type.value;
-        const name = e.target.name.value;
+        const name = user.displayName;
         const date = e.target.date.value;
         const category = e.target.category.value;
-        const email = e.target.email.value;
+        const email = user.email;
         const amount = e.target.amount.value;
         const description = e.target.description.value;
+        
 
         const newTransaction = {
             type: type,
@@ -34,11 +36,12 @@ const AddTransaction = () => {
             .then(res => res.json())
             .then(data => {
                 console.log('after data :', data)
+                toast.success('Add Transaction Success');
             })
 
 
-        console.log(type, name, date, category, email, amount, description, newTransaction);
-        console.log("this is working")
+        // console.log(type, name, date, category, email, amount, description, newTransaction);
+        // console.log("this is working")
 
     }
 
