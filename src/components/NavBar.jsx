@@ -56,14 +56,14 @@ const NavBar = () => {
                                     <div className='absolute z-50 '>
                                         {
                                             show &&
-                                            <div className='dropdown-content bg-base-100 rounded-sm z-1 mt-48 w-40 border border-amber-100 shadow-lg md:w-70 py-4'>
+                                            <div className='dropdown-content bg-base-100 rounded-sm z-1 mt-48 w-60 border border-amber-100 shadow-lg md:w-70 py-4'>
                                                 <div className='flex items-center justify-start px-4'>
-                                                    <div>
+                                                    <div className='h-12 w-12 rounded-full'>
                                                         <img src={user.photoURL} alt={user.displayName} className={`h-12 w-12 rounded-full cursor-pointer object-cover`} />
                                                     </div>
                                                     <div className='ml-4'>
-                                                        <h2 className='text-sm md:text-lg font-normal md:font-medium text-secondary  cursor-pointer'>{user.displayName}</h2>
-                                                        <p className='text-sm cursor-pointer'>
+                                                        <h2 className='text-sm md:text-lg font-normal md:font-medium text-secondary cursor-pointer line-clamp-1'>{user.displayName}</h2>
+                                                        <p className='text-sm cursor-pointer line-clamp-1'>
                                                             {user.email}
                                                         </p>
                                                     </div>
