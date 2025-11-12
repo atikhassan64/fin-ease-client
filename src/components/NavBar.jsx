@@ -32,10 +32,10 @@ const NavBar = () => {
     </div>
     return (
         <div className='bg-base-100 shadow-sm shadow-amber-100'>
-            <div className="navbar max-w-[1200px] mx-auto">
+            <div className="navbar max-w-[1200px] mx-auto px-6 lg:px-0">
                 <div className="navbar-start">
                     <div className="dropdown">
-                        <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+                        <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden px-3 py-3 ml-0">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"> <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /> </svg>
                         </div>
                         <ul
@@ -62,7 +62,7 @@ const NavBar = () => {
                                             show &&
                                             <div className='dropdown-content bg-base-100 rounded-sm z-1 mt-48 w-60 border border-amber-100 shadow-lg md:w-70 py-4'>
                                                 <div className='flex items-center justify-start px-4'>
-                                                    <div className='h-12 w-12 rounded-full'>
+                                                    <div className='h-12 w-12 rounded-full hidden md:block'>
                                                         <img src={user.photoURL} alt={user.displayName} className={`h-12 w-12 rounded-full cursor-pointer object-cover`} />
                                                     </div>
                                                     <div className='ml-4'>

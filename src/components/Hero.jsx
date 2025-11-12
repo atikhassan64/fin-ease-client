@@ -5,13 +5,13 @@ import { Link } from 'react-router';
 const Hero = () => {
     return (
         <div className='bg-base-200'>
-            <div className='max-w-[1200px] mx-auto flex justify-between items-center py-10'>
-                <div className='mr-10 w-[800px]'>
-                    <h2 className='font-bold text-3xl text-primary'>The Best Personal Finance and Budgeting Apps for 2025</h2>
-                    <p className='text-secondary mt-4'>What's your checking account balance? Your credit score? The top personal finance apps we've tested can give you the answers in seconds. We help you choose the right one to take control of your money.</p>
-                    <Link to={`/login`} className='btn btn-outline hover:bg-accent border-amber-100 mt-4'>View More</Link>
+            <div className='max-w-[1200px] mx-auto flex flex-col-reverse md:flex-row justify-between items-center py-10 px-6 lg:px-10'>
+                <div className='mr-10 md:w-[800px]'>
+                    <h2 className='font-bold text-xl md:text-2xl lg:text-3xl text-primary'>Take Control of Your Finances and Shape Your Future</h2>
+                    <p className='text-gray-500 mt-3 md:mt-4'>Track your spending, set smart budgets, and achieve your financial goals with ease.</p>
+                    <Link to={`/add-transaction`} className='btn btn-outline hover:bg-accent text-gray-500 border-amber-100 mt-4'>Get Started</Link>
                 </div>
-                <div className='mr-10'>
+                <div className='mb-8 md:mb-0'>
                     <img src={banner} alt="smart-money-management" className='rounded-lg shadow-lg' />
                 </div>
             </div>

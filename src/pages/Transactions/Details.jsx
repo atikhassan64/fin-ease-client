@@ -20,7 +20,7 @@ const TransactionDetails = () => {
                     .then(res => res.json())
                     .then(transactions => {
                         const total = transactions.reduce(
-                            (sum, t) => sum + parseInt(t.amount),
+                            (sum, t) => sum + parseFloat(t.amount),
                             0
                         );
                         setTotalCategoryAmount(total);

@@ -38,11 +38,6 @@ const AddTransaction = () => {
                 console.log('after data :', data)
                 toast.success('Add Transaction Success');
             })
-
-
-        // console.log(type, name, date, category, email, amount, description, newTransaction);
-        // console.log("this is working")
-
     }
 
     return (
