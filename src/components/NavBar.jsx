@@ -25,6 +25,10 @@ const NavBar = () => {
         <li><NavLink className={`hover:bg-accent`} to={`/my-transactions`}>My Transactions</NavLink></li>
         <li><NavLink className={`hover:bg-accent`} to={`/reports`}>Reports</NavLink></li>
 
+        {
+            user && <li><NavLink className={`hover:bg-accent`} to={`/profile`}>My Profile</NavLink></li>
+        }
+
     </div>
     return (
         <div className='bg-base-100 shadow-sm shadow-amber-100'>

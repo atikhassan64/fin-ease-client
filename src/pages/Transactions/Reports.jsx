@@ -1,17 +1,19 @@
-import React, { useEffect, useState } from "react";
+import React, { use, useEffect, useState } from "react";
 import { PieChart, Pie, Cell, Tooltip, Legend, BarChart, Bar, XAxis, YAxis, CartesianGrid, ResponsiveContainer } from "recharts";
 import { Calendar } from "lucide-react";
+import { AuthContext } from "../../context/AuthContext";
 
 const Reports = () => {
+    const {user} = use(AuthContext);
     const [transactions, setTransactions] = useState([]);
     const [selectedMonth, setSelectedMonth] = useState("All");
 
     // Fetch data from server
     useEffect(() => {
-        fetch("http://localhost:3000/transactions")
+        fetch(`http://localhost:3000/transactions?email=${user.email}`)
             .then(res => res.json())
             .then(data => setTransactions(data));
-    }, []);
+    }, [user]);
 
     // 🧮 Filter transactions by month
     const filteredTransactions =
@@ -53,9 +55,9 @@ const Reports = () => {
                     <select
                         value={selectedMonth}
                         onChange={e => setSelectedMonth(e.target.value)}
-                        className="border border-amber-200 rounded-lg p-2 outline-none"
+                        className="border border-amber-100 rounded-lg p-2 outline-none"
                     >
-                        <option value="All">All Months</option>
+                        <option value="All" >All Months</option>
                         {Array.from({ length: 12 }, (_, i) => (
                             <option key={i + 1} value={i + 1}>
                                 {new Date(0, i).toLocaleString("default", { month: "long" })}
