@@ -7,6 +7,7 @@ import PrivateRoute from "./PrivateRoute";
 import MyTransactions from "../pages/Transactions/MyTransactions";
 import AddTransaction from "../pages/Transactions/AddTransaction";
 import Reports from "../pages/Transactions/Reports";
+import Details from "../pages/Transactions/Details";
 
 export const router = createBrowserRouter([
     {
@@ -36,6 +37,11 @@ export const router = createBrowserRouter([
             {
                 path: 'reports',
                 element: <PrivateRoute><Reports></Reports></PrivateRoute>
+            },
+            {
+                path: 'details/:id',
+                loader: ({params}) => fetch(`http://localhost:3000/transactions/${params.id}`),
+                element: <PrivateRoute><Details></Details></PrivateRoute>
             }
         ]
     }

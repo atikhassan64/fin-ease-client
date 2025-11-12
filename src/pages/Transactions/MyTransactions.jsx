@@ -1,5 +1,7 @@
 import React, { use, useEffect, useRef, useState } from 'react';
 import { AuthContext } from '../../context/AuthContext';
+import Swal from 'sweetalert2';
+import { Link } from 'react-router';
 
 const MyTransactions = () => {
     const { user } = use(AuthContext);
@@ -48,11 +50,53 @@ const MyTransactions = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data)
-                setTransaction(prev => prev.map(t => t._id === id ? { ...t, ...newUpdate } : t));
+
+
+                if (data.modifiedCount) {
+                    // const modifyTransaction = transactions.find(t => t._id === id);
+                    // setTransaction(modifyTransaction);
+
+                    setTransaction(prev => prev.map(t => t._id === id ? { ...t, ...newUpdate } : t));
+                }
                 updateRef.current.close();
             })
     }
 
+    const handleDelete = (deleteId) => {
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You want delete this transaction!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+
+                fetch(`http://localhost:3000/transactions/${deleteId}`, {
+                    method: 'DELETE'
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data)
+                        if (data.deletedCount) {
+                            Swal.fire({
+                                title: "Deleted!",
+                                text: "Your transaction has been deleted.",
+                                icon: "success"
+                            });
+                            const remainingTransaction = transactions.filter(t => t._id !== deleteId);
+                            setTransaction(remainingTransaction);
+                        }
+                    })
+
+            }
+        });
+
+
+
+    }
 
     return (
         <div className="max-w-[1200px] mx-auto py-10">
@@ -65,7 +109,7 @@ const MyTransactions = () => {
                     transactions.map(transaction => (
                         <div
                             key={transaction._id}
-                            className="bg-white rounded-lg shadow-md p-5 border border-amber-100 hover:shadow-lg transition"
+                            className="bg-white rounded-lg shadow-md p-5 border border-amber-100 hover:shadow-xl transition"
                         >
                             <div className="flex justify-between items-center mb-2">
                                 <span
@@ -89,12 +133,12 @@ const MyTransactions = () => {
                                 <button onClick={() => handleUpdate(transaction._id)} className="flex-1 btn btn-outline text-primary border-primary hover:text-white hover:bg-primary transition">
                                     Update
                                 </button>
-                                <button className="flex-1 btn btn-outline text-secondary border-amber-100 hover:bg-accent transition">
+                                <button onClick={() => handleDelete(transaction._id)} className="flex-1 btn btn-outline text-secondary border-amber-100 hover:bg-accent transition">
                                     Delete
                                 </button>
-                                <button className="flex-1 btn btn-outline text-primary border-primary hover:text-white hover:bg-primary transition">
+                                <Link to={`/details/${transaction._id}`} className="flex-1 btn btn-outline text-primary border-primary hover:text-white hover:bg-primary transition">
                                     Details
-                                </button>
+                                </Link>
                             </div>
                         </div>
                     ))
