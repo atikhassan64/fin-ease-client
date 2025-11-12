@@ -20,13 +20,13 @@ const NavBar = () => {
     }
 
     const links = <div className='flex flex-col lg:flex-row'>
-        <li><NavLink className={`hover:bg-accent`} to={`/`}>Home</NavLink></li>
-        <li><NavLink className={`hover:bg-accent`} to={`/add-transaction`}>Add Transaction</NavLink></li>
-        <li><NavLink className={`hover:bg-accent`} to={`/my-transactions`}>My Transactions</NavLink></li>
-        <li><NavLink className={`hover:bg-accent`} to={`/reports`}>Reports</NavLink></li>
+        <li><NavLink className={`hover:bg-accent font-medium text-gray-500 hover:text-primary`} to={`/`}>Home</NavLink></li>
+        <li><NavLink className={`hover:bg-accent font-medium text-gray-500 hover:text-primary`} to={`/add-transaction`}>Add Transaction</NavLink></li>
+        <li><NavLink className={`hover:bg-accent font-medium text-gray-500 hover:text-primary`} to={`/my-transactions`}>My Transactions</NavLink></li>
+        <li><NavLink className={`hover:bg-accent font-medium text-gray-500 hover:text-primary`} to={`/reports`}>Reports</NavLink></li>
 
         {
-            user && <li><NavLink className={`hover:bg-accent`} to={`/profile`}>My Profile</NavLink></li>
+            user && <li><NavLink className={`hover:bg-accent font-medium text-gray-500 hover:text-primary`} to={`/profile`}>My Profile</NavLink></li>
         }
 
     </div>
@@ -86,7 +86,7 @@ const NavBar = () => {
 
                             </div>
                             :
-                            <Link to={`/login`} className="btn btn-outline hover:bg-accent border-amber-100">Sign in</Link>
+                            <Link to={`/login`} className="btn btn-outline text-gray-500 hover:text-primary hover:bg-accent border-amber-100">Sign in</Link>
                     }
                 </div>
             </div>

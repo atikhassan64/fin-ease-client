@@ -29,7 +29,7 @@ const TransactionDetails = () => {
     }, [id]);
 
     return (
-        <div className="max-w-[1200px] mx-auto px-80 py-10">
+        <div className="max-w-[1200px] mx-auto px-6 lg:px-80 mt-10">
             {/* Back Button */}
             <button
                 onClick={() => window.history.back()}

@@ -33,8 +33,8 @@ const Profile = () => {
     }
 
     return (
-        <div className='max-w-11/12 mx-auto mt-15 mb-10 '>
-            <div className='px-5 md:px-10 py-10 md:py-16 p-6 bg-white rounded-xl shadow-lg border border-amber-100'>
+        <div className='max-w-11/12 mx-auto mt-10 px-2 md:px-20 '>
+            <div className='px-5 md:px-10 py-10 md:py-16 bg-white rounded-xl shadow-lg border border-amber-100'>
                 <div className='flex justify-between items-center'>
                     <div className='flex items-center'>
                         <img src={photoURL} alt={displayName} className='h-15 w-15 object-cover rounded-full' />
@@ -48,13 +48,13 @@ const Profile = () => {
                     </div>
                 </div>
                 <div className='mt-10 border border-amber-100 pt-4 pb-2'>
-                    <h3 className='px-4 font-semibold text-lg'>Personal Details</h3>
-                    <div className=' px-4 flex justify-between items-center border-b-2 border-dashed border-amber-100 pt-4 pb-2 '>
-                        <h2 className='font-semibold md:font-semibold text-lg md:text-sm text-gray-500'>Full Name</h2>
+                    <h3 className='px-2 md:px-4 font-semibold text-sm md:text-lg'>Personal Details</h3>
+                    <div className='px-2 md:px-4 flex justify-between items-center border-b-2 border-dashed border-amber-100 pt-4 pb-2 '>
+                        <h2 className='font-semibold md:font-semibold text-sm md:text-sm text-gray-500'>Full Name</h2>
                         <h4 className=' text-sm text-secondary font-semibold md:text-lg'>{displayName}</h4>
                     </div>
-                    <div className='flex justify-between items-center py-2 px-4'>
-                        <h2 className='font-semibold md:font-semibold text-lg md:text-sm text-gray-500'>Email Account</h2>
+                    <div className='flex justify-between items-center py-2 px-2 md:px-4'>
+                        <h2 className='font-semibold md:font-semibold text-sm md:text-sm text-gray-500'>Email Account</h2>
                         <h4 className='text-sm text-secondary font-semibold md:text-lg'>{email}</h4>
                     </div>
                     <div className='md:hidden'>

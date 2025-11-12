@@ -4,15 +4,13 @@ import { PiggyBank, TrendingUp, ShieldCheck, BarChart3 } from "lucide-react";
 const FinancialPlanning = () => {
     return (
         <div>
-            <section className=" from-amber-50 to-white py-16">
+            <section className=" from-amber-50 to-white py-10">
                 <div className="max-w-[1200px] mx-auto px-6 text-center">
-                    {/* Heading */}
-                    <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
+                    <h2 className="font-semibold text-xl md:text-2xl text-primary mb-2">
                         Why Financial Planning Matters
                     </h2>
-                    <p className="text-gray-600 max-w-2xl mx-auto mb-12">
-                        Financial planning helps you take control of your money, achieve your goals, and
-                        secure your future. Here’s why it’s essential for everyone.
+                    <p className="text-gray-500 max-w-xl mx-auto mb-12">
+                        Financial planning helps you take control of your money, achieve your goals, and secure your future. Here’s why it’s essential for everyone.
                     </p>
 
                     {/* Cards Grid */}
@@ -25,7 +23,7 @@ const FinancialPlanning = () => {
                             <h3 className="text-lg font-semibold text-primary mb-2">
                                 Build Your Savings
                             </h3>
-                            <p className="text-gray-600 text-sm">
+                            <p className="text-gray-500 text-sm">
                                 Smart budgeting and saving habits help you grow wealth and prepare for
                                 emergencies.
                             </p>

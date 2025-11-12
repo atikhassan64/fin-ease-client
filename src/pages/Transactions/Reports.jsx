@@ -8,14 +8,12 @@ const Reports = () => {
     const [transactions, setTransactions] = useState([]);
     const [selectedMonth, setSelectedMonth] = useState("All");
 
-    // Fetch data from server
     useEffect(() => {
         fetch(`http://localhost:3000/transactions?email=${user.email}`)
             .then(res => res.json())
             .then(data => setTransactions(data));
     }, [user]);
 
-    // 🧮 Filter transactions by month
     const filteredTransactions =
         selectedMonth === "All"
             ? transactions
@@ -23,7 +21,6 @@ const Reports = () => {
                 t => new Date(t.date).getMonth() + 1 === parseInt(selectedMonth)
             );
 
-    // 🥧 Category-wise Total
     const categoryData = Object.values(
         filteredTransactions.reduce((acc, t) => {
             if (!acc[t.category]) acc[t.category] = { name: t.category, value: 0 };
@@ -32,7 +29,6 @@ const Reports = () => {
         }, {})
     );
 
-    // 📊 Monthly Total (for Bar Chart)
     const monthlyData = Object.values(
         transactions.reduce((acc, t) => {
             const month = new Date(t.date).toLocaleString("default", { month: "short" });
@@ -107,7 +103,7 @@ const Reports = () => {
                             <YAxis />
                             <Tooltip />
                             <Legend />
-                            <Bar dataKey="total" fill="#0088FE" radius={[10, 10, 0, 0]} />
+                            <Bar dataKey="total" fill="#479f81" radius={[10, 10, 0, 0]} />
                         </BarChart>
                     </ResponsiveContainer>
                 </div>

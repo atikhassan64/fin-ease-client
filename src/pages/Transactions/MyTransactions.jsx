@@ -9,15 +9,16 @@ const MyTransactions = () => {
     const [transactions, setTransaction] = useState([]);
     const updateRef = useRef(null);
     const [id, setId] = useState(null);
-    // console.log(id)
+    const [sortBy, setSortBy] = useState("default");
+
 
     useEffect(() => {
-        fetch(`http://localhost:3000/transactions?email=${user.email}`)
+        fetch(`http://localhost:3000/transactions?email=${user.email}&sortBy=${sortBy}`)
             .then(res => res.json())
             .then(data => {
                 setTransaction(data);
             })
-    }, [user])
+    }, [user, sortBy])
 
 
     const handleUpdate = (id) => {
@@ -35,7 +36,7 @@ const MyTransactions = () => {
         const newUpdate = {
             type: type,
             category: category,
-            amount: amount,
+            amount: parseInt(amount),
             description: description,
             date: date,
         }
@@ -101,12 +102,26 @@ const MyTransactions = () => {
     }
 
     return (
-        <div className="max-w-[1200px] mx-auto py-10">
-            <h2 className="text-2xl font-semibold mb-6 text-primary">
-                My Transactions
-            </h2>
+        <div className="max-w-[1200px] mx-auto mt-10 px-6 lg:px-0">
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className='flex justify-between items-center'>
+                <h2 className="text-2xl font-semibold mb-6 text-primary">
+                    My Transactions
+                </h2>
+                <div className="flex gap-4 mb-6">
+                    <select
+                        value={sortBy}
+                        onChange={(e) => setSortBy(e.target.value)}
+                        className="border border-amber-100 px-3 py-2 rounded"
+                    >
+                        <option value="default">Sort By</option>
+                        <option value="date">Date</option>
+                        <option value="amount">Amount</option>
+                    </select>
+                </div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {
                     transactions.map(transaction => (
                         <div

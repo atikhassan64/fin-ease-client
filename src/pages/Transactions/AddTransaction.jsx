@@ -19,7 +19,7 @@ const AddTransaction = () => {
         const newTransaction = {
             type: type,
             category: category,
-            amount: amount,
+            amount: parseInt(amount),
             description: description,
             date: date,
             email: email,
@@ -41,13 +41,13 @@ const AddTransaction = () => {
     }
 
     return (
-        <div className='max-w-[1200px] mx-auto px-20'>
+        <div className='max-w-[1200px] mx-auto px-6 md:px-20'>
             <div className=" mx-auto mt-10 p-6 bg-white rounded-xl shadow-lg border border-amber-100">
                 <h2 className="text-2xl font-semibold mb-6 text-primary">
                     Add Transaction
                 </h2>
                 <form onSubmit={handleSubmit} className="">
-                    <div className='flex justify-between items-center gap-4'>
+                    <div className='flex flex-col md:flex-row justify-between items-center gap-4'>
                         {/* Left */}
                         <div className='flex-1'>
                             {/* Type */}
