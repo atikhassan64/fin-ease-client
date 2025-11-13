@@ -15,7 +15,7 @@ const Overview = () => {
 
     useEffect(() => {
         if (user?.email) {
-            fetch(`http://localhost:3000/transactions?email=${user.email}`)
+            fetch(`https://fin-ease-server-three.vercel.app/transactions?email=${user.email}`)
                 .then(res => res.json())
                 .then(data => {
                     setHeroData(data);

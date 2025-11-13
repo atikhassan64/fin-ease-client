@@ -9,7 +9,7 @@ const Reports = () => {
     const [selectedMonth, setSelectedMonth] = useState("All");
 
     useEffect(() => {
-        fetch(`http://localhost:3000/transactions?email=${user.email}`)
+        fetch(`https://fin-ease-server-three.vercel.app/transactions?email=${user.email}`)
             .then(res => res.json())
             .then(data => setTransactions(data));
     }, [user]);

@@ -14,7 +14,7 @@ const MyTransactions = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:3000/transactions?email=${user.email}&sortBy=${sortBy}`)
+        fetch(`https://fin-ease-server-three.vercel.app/transactions?email=${user.email}&sortBy=${sortBy}`)
             .then(res => res.json())
             .then(data => {
                 setTransaction(data);
@@ -43,7 +43,7 @@ const MyTransactions = () => {
         }
 
 
-        fetch(`http://localhost:3000/transactions/${id}`, {
+        fetch(`https://fin-ease-server-three.vercel.app/transactions/${id}`, {
             method: "PATCH",
             headers: {
                 'content-type': 'application/json'
@@ -64,7 +64,7 @@ const MyTransactions = () => {
                 }
                 updateRef.current.close();
                 toast.success('Transaction Updated');
-                
+
             })
     }
 
@@ -80,7 +80,7 @@ const MyTransactions = () => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:3000/transactions/${deleteId}`, {
+                fetch(`https://fin-ease-server-three.vercel.app/transactions/${deleteId}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
@@ -184,6 +184,7 @@ const MyTransactions = () => {
                                 <label className="label">Date</label>
                                 <input
                                     type="date"
+                                    required
                                     name='date'
                                     className="w-full border p-2 border-amber-100 outline-none"
                                 />
@@ -193,19 +194,27 @@ const MyTransactions = () => {
                             <div className='flex-1'>
                                 {/* Category */}
                                 <label className="label">Category</label>
-                                <select name='category' className="w-full border p-2 border-amber-100 mb-4 outline-none">
-                                    <option>Select Category</option>
-                                    <option>Salary</option>
-                                    <option>Food</option>
-                                    <option>Transport</option>
-                                    <option>Shopping</option>
-                                    <option>Bills</option>
+                                <select
+                                    name="category"
+                                    required
+                                    defaultValue=""
+                                    className="w-full border p-2 border-amber-100 mb-4 outline-none"
+                                >
+                                    <option value="" disabled hidden>
+                                        Select Category
+                                    </option>
+                                    <option value="Salary">Salary</option>
+                                    <option value="Food">Food</option>
+                                    <option value="Transport">Transport</option>
+                                    <option value="Shopping">Shopping</option>
+                                    <option value="Bills">Bills</option>
                                 </select>
 
                                 {/* Amount */}
                                 <label className="label">Amount</label>
                                 <input
                                     type="number"
+                                    required
                                     name='amount'
                                     placeholder="Enter Amount"
                                     className="w-full border p-2 border-amber-100 outline-none"
@@ -217,6 +226,7 @@ const MyTransactions = () => {
                         <label className="label mt-5">Description</label>
                         <textarea
                             name='description'
+                            required
                             placeholder="Description"
                             className="w-full border p-2 border-amber-100 outline-none"
                         ></textarea>

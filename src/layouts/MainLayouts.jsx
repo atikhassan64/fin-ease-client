@@ -7,10 +7,6 @@ import { AuthContext } from '../context/AuthContext';
 import Loading from '../components/Loading';
 
 const MainLayouts = () => {
-    // const { loading } = use(AuthContext);
-    // if(loading){
-    //     return <Loading></Loading>
-    // }
     const { loading } = use(AuthContext);
 
     if (loading) {

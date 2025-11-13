@@ -12,13 +12,13 @@ const TransactionDetails = () => {
 
     useEffect(() => {
         
-        fetch(`http://localhost:3000/transactions/${id}`)
+        fetch(`https://fin-ease-server-three.vercel.app/transactions/${id}`)
             .then(res => res.json())
             .then(data => {
                 setTransaction(data);
 
              
-                fetch(`http://localhost:3000/transactions`)
+                fetch(`https://fin-ease-server-three.vercel.app/transactions`)
                     .then(res => res.json())
                     .then(transactions => {
                         const sameCategory = transactions.filter(

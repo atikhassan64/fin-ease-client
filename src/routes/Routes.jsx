@@ -43,7 +43,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: 'details/:id',
-                loader: ({params}) => fetch(`http://localhost:3000/transactions/${params.id}`),
+                loader: ({params}) => fetch(`https://fin-ease-server-three.vercel.app/transactions/${params.id}`),
                 element: <PrivateRoute><Details></Details></PrivateRoute>
             },
             {

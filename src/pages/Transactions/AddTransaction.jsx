@@ -27,7 +27,7 @@ const AddTransaction = () => {
             name: name
         }
 
-        fetch("http://localhost:3000/transactions", {
+        fetch("https://fin-ease-server-three.vercel.app/transactions", {
             method: "POST",
             headers: {
                 'content-type': 'application/json'
@@ -73,6 +73,7 @@ const AddTransaction = () => {
                             {/* Date */}
                             <label className="label">Date</label>
                             <input
+                                required
                                 type="date"
                                 name='date'
                                 className="w-full border p-2 border-amber-100 outline-none"
@@ -83,13 +84,20 @@ const AddTransaction = () => {
                         <div className='flex-1'>
                             {/* Category */}
                             <label className="label">Category</label>
-                            <select name='category' className="w-full border p-2 border-amber-100 mb-4 outline-none">
-                                <option>Select Category</option>
-                                <option>Salary</option>
-                                <option>Food</option>
-                                <option>Transport</option>
-                                <option>Shopping</option>
-                                <option>Bills</option>
+                            <select
+                                name="category"
+                                required
+                                defaultValue=""
+                                className="w-full border p-2 border-amber-100 mb-4 outline-none"
+                            >
+                                <option value="" disabled hidden>
+                                    Select Category
+                                </option>
+                                <option value="Salary">Salary</option>
+                                <option value="Food">Food</option>
+                                <option value="Transport">Transport</option>
+                                <option value="Shopping">Shopping</option>
+                                <option value="Bills">Bills</option>
                             </select>
 
                             {/* Email */}
@@ -108,6 +116,7 @@ const AddTransaction = () => {
                             <input
                                 type="number"
                                 name='amount'
+                                required
                                 placeholder="Enter Amount"
                                 className="w-full border p-2 border-amber-100 outline-none"
                             />
@@ -118,6 +127,7 @@ const AddTransaction = () => {
                     <label className="label mt-5">Description</label>
                     <textarea
                         name='description'
+                        required
                         placeholder="Description"
                         className="w-full border p-2 border-amber-100 outline-none"
                     ></textarea>
