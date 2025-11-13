@@ -25,9 +25,6 @@ const NavBar = () => {
         <li><NavLink className={`hover:bg-accent font-medium text-gray-500 hover:text-primary`} to={`/add-transaction`}>Add Transaction</NavLink></li>
         <li><NavLink className={`hover:bg-accent font-medium text-gray-500 hover:text-primary`} to={`/my-transactions`}>My Transactions</NavLink></li>
         <li><NavLink className={`hover:bg-accent font-medium text-gray-500 hover:text-primary`} to={`/reports`}>Reports</NavLink></li>
-
-
-
     </div>
     return (
         <div className='bg-base-100 shadow-sm shadow-amber-100'>
@@ -60,8 +57,6 @@ const NavBar = () => {
                                         {
                                             show &&
                                             <div className="relative inline-block text-left">
-
-                                                {/* Dropdown Menu */}
                                                 <div className="absolute right-0 mt-5 w-64 bg-white border border-gray-200 rounded-lg shadow-lg z-50">
                                                     <div className="p-4 flex items-center space-x-3">
                                                         <img
@@ -78,10 +73,7 @@ const NavBar = () => {
                                                             </p>
                                                         </div>
                                                     </div>
-
                                                     <div className="border-t border-amber-100"></div>
-
-                                                    
                                                         {
                                                             user && <NavLink className={` w-full text-left px-4 py-3 text-sm text-gray-500
                                                         font-medium hover:text-primary hover:bg-gray-50 flex items-center space-x-2 rounded-b-lg cursor-pointer`} to={`/profile`}>My Profile</NavLink>
@@ -102,10 +94,8 @@ const NavBar = () => {
                                     </div>
                                     <div className='h-10 w-10 rounded-full border-accent'>
                                         <img src={user.photoURL} alt={user.displayName} className={`h-10 w-10 rounded-full cursor-pointer object-cover`} />
-
                                     </div>
                                 </div>
-
                             </div>
                             :
                             <Link to={`/login`} className="btn btn-outline text-gray-500 hover:text-primary hover:bg-accent border-amber-100">Sign in</Link>

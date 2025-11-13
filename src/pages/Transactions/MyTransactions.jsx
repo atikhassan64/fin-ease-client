@@ -52,12 +52,7 @@ const MyTransactions = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data)
-
-
                 if (data.modifiedCount) {
-                    // const modifyTransaction = transactions.find(t => t._id === id);
-                    // setTransaction(modifyTransaction);
 
                     setTransaction(prev => prev.map(t => t._id === id ? { ...t, ...newUpdate } : t));
                     navigate(`/details/${id}`);
@@ -96,7 +91,6 @@ const MyTransactions = () => {
                             setTransaction(remainingTransaction);
                         }
                     })
-
             }
         });
 

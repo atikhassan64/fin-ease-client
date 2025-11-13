@@ -12,7 +12,6 @@ const ForgetPassword = () => {
 
     const handleForgetPassword = (e) => {
         e.preventDefault();
-        
         setMessage("")
 
         if (!email) {
@@ -46,7 +45,6 @@ const ForgetPassword = () => {
                     <h2 className='pt-6 text-center font-semibold text-2xl text-primary '>Recover Your Password</h2>
                     <form onSubmit={handleForgetPassword} className="card-body">
                         <fieldset className="fieldset">
-                            {/* Email */}
                             <label className="label">Email</label>
                             <input
                                 type="email"
@@ -55,9 +53,7 @@ const ForgetPassword = () => {
                                 placeholder="Email"
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
-
                             />
-                            {/* Signup btn */}
                             <button type='submit' className="btn mt-4 btn-primary">Recover</button>
                         </fieldset>
                         <p className='text-red-500'><small>{message}</small></p>

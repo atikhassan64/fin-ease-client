@@ -146,7 +146,6 @@ const Budgeting = () => {
                         </div>
                     </div>
 
-                    {/* Right column - Featured tip */}
                     <div className="space-y-4">
                         <div className=" rounded-2xl p-5 shadow-sm border border-amber-100">
                             <h4 className="text-sm font-semibold text-primary">Featured</h4>
@@ -180,8 +179,6 @@ const Budgeting = () => {
             </div>
             </div>
         </div>
-
-        
     );
 };
 

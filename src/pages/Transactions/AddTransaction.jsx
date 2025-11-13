@@ -36,7 +36,6 @@ const AddTransaction = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log('after data :', data)
                 e.target.reset();
                 toast.success('Add Transaction Success');
             })

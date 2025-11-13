@@ -43,7 +43,6 @@ const Login = () => {
                 navigate(location.state || "/");
             })
             .catch((error) => {
-                console.log(error.code);
                 if (error.code === "auth/invalid-email") {
                     setError("Invalid email address!");
                     toast.error("Invalid email address!");

@@ -32,7 +32,6 @@ const MainLayouts = () => {
                 containerStyle={{}}
                 toasterId="default"
                 toastOptions={{
-                    // Define default options
                     className: '',
                     duration: 2000,
                     removeDelay: 1000,
@@ -41,7 +40,6 @@ const MainLayouts = () => {
                         color: '#fff',
                     },
 
-                    // Default options for specific types
                     success: {
                         duration: 3000,
                         iconTheme: {

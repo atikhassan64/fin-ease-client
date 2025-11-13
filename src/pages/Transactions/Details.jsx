@@ -8,7 +8,6 @@ const TransactionDetails = () => {
     const [transaction, setTransaction] = useState(null);
     const { type, date, description, amount, category } = transactionsDetails;
     const [totalCategoryAmount, setTotalCategoryAmount] = useState(0);
-    console.log(transaction, totalCategoryAmount)
 
     useEffect(() => {
         

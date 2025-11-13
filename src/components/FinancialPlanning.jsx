@@ -12,10 +12,8 @@ const FinancialPlanning = () => {
                     <p className="text-gray-500 max-w-xl mx-auto mb-12">
                         Financial planning helps you take control of your money, achieve your goals, and secure your future. Here’s why it’s essential for everyone.
                     </p>
-
-                    {/* Cards Grid */}
+                   
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                        {/* Card 1 */}
                         <div className="bg-white border border-amber-100 rounded-2xl shadow-sm hover:shadow-md transition p-6">
                             <div className="flex justify-center mb-4">
                                 <PiggyBank className="w-10 h-10 text-amber-500" />
@@ -29,7 +27,6 @@ const FinancialPlanning = () => {
                             </p>
                         </div>
 
-                        {/* Card 2 */}
                         <div className="bg-white border border-amber-100 rounded-2xl shadow-sm hover:shadow-md transition p-6">
                             <div className="flex justify-center mb-4">
                                 <TrendingUp className="w-10 h-10 text-green-500" />
@@ -43,7 +40,6 @@ const FinancialPlanning = () => {
                             </p>
                         </div>
 
-                        {/* Card 3 */}
                         <div className="bg-white border border-amber-100 rounded-2xl shadow-sm hover:shadow-md transition p-6">
                             <div className="flex justify-center mb-4">
                                 <ShieldCheck className="w-10 h-10 text-blue-500" />
@@ -56,7 +52,6 @@ const FinancialPlanning = () => {
                             </p>
                         </div>
 
-                        {/* Card 4 */}
                         <div className="bg-white border border-amber-100 rounded-2xl shadow-sm hover:shadow-md transition p-6">
                             <div className="flex justify-center mb-4">
                                 <BarChart3 className="w-10 h-10 text-purple-500" />

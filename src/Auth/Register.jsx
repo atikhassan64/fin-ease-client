@@ -6,10 +6,8 @@ import toast from 'react-hot-toast';
 
 const Register = () => {
     const { createUser, setUser, user, loginWithGoogle, updateUser } = use(AuthContext);
-
     const [error, setError] = useState("");
     const [toggle, setToggle] = useState(false);
-
     const location = useLocation();
     const navigate = useNavigate();
 

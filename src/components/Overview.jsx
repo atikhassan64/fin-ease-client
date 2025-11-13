@@ -1,8 +1,6 @@
 import React, { use, useEffect, useState } from 'react';
 import { ArrowUpCircle, ArrowDownCircle, Wallet } from "lucide-react";
 import { AuthContext } from '../context/AuthContext';
-import Loading from './Loading';
-
 
 
 const Overview = () => {
@@ -10,8 +8,6 @@ const Overview = () => {
     const [heroData, setHeroData] = useState([]);
     const [totalIncome, setTotalIncome] = useState(0);
     const [totalExpense, setTotalExpense] = useState(0);
-    console.log(totalIncome, totalExpense, heroData)
-
 
     useEffect(() => {
         if (user?.email) {
@@ -39,7 +35,7 @@ const Overview = () => {
             <h2 className='font-semibold text-xl md:text-2xl text-primary mb-4 '>Transactions Overview</h2>
             <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-                {/* Total Balance */}
+                
                 <div className="bg-white border-l-5 border-primary shadow-sm p-6 rounded-lg  hover:shadow-md transition flex justify-between">
                     <div>
                         <h3 className="text-gray-500 text-sm font-medium mb-1">Total Balance</h3>
@@ -53,7 +49,7 @@ const Overview = () => {
                     </div>
                 </div>
 
-                {/* Total Income */}
+               
                 <div className="bg-white border-l-5 border-primary shadow-sm p-6 rounded-lg  hover:shadow-md transition flex justify-between">
                     <div>
                         <h3 className="text-gray-500 text-sm font-medium mb-1">Total Income</h3>
@@ -67,7 +63,7 @@ const Overview = () => {
                     </div>
                 </div>
 
-                {/* Total Expense */}
+              
                 <div className="bg-white border-l-5 border-red-600 shadow-sm p-6 rounded-lg  hover:shadow-md transition flex justify-between">
                     <div>
                         <h3 className="text-gray-500 text-sm font-medium mb-1">Total Expense</h3>

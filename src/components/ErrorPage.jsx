@@ -1,6 +1,5 @@
 import React from 'react';
 import errorImg from '../assets/error.png';
-import { Link } from 'react-router';
 import { ArrowLeft } from 'lucide-react';
 
 const ErrorPage = () => {

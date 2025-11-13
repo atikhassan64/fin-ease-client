@@ -45,7 +45,7 @@ const Reports = () => {
             <div className="flex justify-between items-center mb-8">
                 <h2 className="text-2xl font-semibold text-primary">Financial Reports</h2>
 
-                {/* 🔍 Month Filter */}
+      
                 <div className="flex items-center gap-2">
                     <Calendar className="w-5 h-5 text-gray-500" />
                     <select
@@ -63,9 +63,9 @@ const Reports = () => {
                 </div>
             </div>
 
-            {/* 📈 Charts Section */}
+     
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-                {/* Pie Chart */}
+                
                 <div className="bg-white border border-amber-100 rounded-xl shadow p-6">
                     <h3 className="text-lg font-semibold mb-4 text-secondary">
                         Category-wise Summary
@@ -91,7 +91,7 @@ const Reports = () => {
                     </ResponsiveContainer>
                 </div>
 
-                {/* Bar Chart */}
+               
                 <div className="bg-white border border-amber-100 rounded-xl shadow p-6">
                     <h3 className="text-lg font-semibold mb-4 text-secondary">
                         Monthly Totals
