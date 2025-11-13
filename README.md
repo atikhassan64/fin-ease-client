@@ -1,6 +1,6 @@
 # 💰 FinEase – Personal Finance Management App
 
-**Live Site URL:** [https://finees-app.netlify.app](https://finees-app.netlify.app)  
+**Live Site URL:** [https://finease-397b3.web.app](https://finease-397b3.web.app)  
 **Server Hosted On:** [https://finees-server.vercel.app](https://finees-server.vercel.app)
 
 ---
@@ -19,7 +19,7 @@ It provides a secure login system, insightful charts, and a smooth user experien
 - 📊 **Visual Analytics:** Get real-time financial insights with interactive charts and reports.  
 - 🧭 **Private Routes:** Logged-in users can access protected pages without being redirected after page reload.  
 - ☁️ **Data Persistence:** All transactions are saved securely in the backend (MongoDB via Express.js API).  
-- 🌐 **Hosting Setup:** Client hosted on **Netlify**, Server hosted on **Vercel**.  
+- 🌐 **Hosting Setup:** Client hosted on **Firebase**, Server hosted on **Vercel**.  
 - 🧾 **Error-Free Reloading:** SPA routing configured to prevent 404 errors on reload from any route.  
 
 ---
@@ -34,8 +34,3 @@ It provides a secure login system, insightful charts, and a smooth user experien
 
 ---
 
-## ⚙️ Installation & Setup (Local)
-
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/finees-client.git
