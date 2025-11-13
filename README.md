@@ -1,16 +1,41 @@
-# React + Vite
+# 💰 FinEase – Personal Finance Management App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Live Site URL:** [https://finees-app.netlify.app](https://finees-app.netlify.app)  
+**Server Hosted On:** [https://finees-server.vercel.app](https://finees-server.vercel.app)
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🌟 Project Overview
 
-## React Compiler
+**FinEase** is a personal finance management web application that helps users easily manage their **income**, **expenses**, and **financial goals** in one place.  
+It provides a secure login system, insightful charts, and a smooth user experience for better financial decision-making.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🚀 Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- 🔐 **Secure Authentication:** Users can log in with Email/Password or Google using Firebase Authentication.  
+- 💸 **Transaction Management:** Add, edit, or delete income and expense records instantly.  
+- 📊 **Visual Analytics:** Get real-time financial insights with interactive charts and reports.  
+- 🧭 **Private Routes:** Logged-in users can access protected pages without being redirected after page reload.  
+- ☁️ **Data Persistence:** All transactions are saved securely in the backend (MongoDB via Express.js API).  
+- 🌐 **Hosting Setup:** Client hosted on **Netlify**, Server hosted on **Vercel**.  
+- 🧾 **Error-Free Reloading:** SPA routing configured to prevent 404 errors on reload from any route.  
+
+---
+
+## 🧩 Technologies Used
+
+- **Frontend:** React.js, React Router, Tailwind CSS, Recharts  
+- **Backend:** Node.js, Express.js, MongoDB  
+- **Authentication:** Firebase Authentication  
+- **Hosting:** Netlify (Client), Vercel (Server)  
+- **UI Enhancements:** SweetAlert2 / React Toastify for user notifications  
+
+---
+
+## ⚙️ Installation & Setup (Local)
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/finees-client.git

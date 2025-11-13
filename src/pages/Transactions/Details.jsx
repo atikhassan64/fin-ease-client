@@ -64,7 +64,7 @@ const TransactionDetails = () => {
                     <h2 className="text-xl font-semibold text-secondary mb-2 flex items-center gap-2">
                         <Tag className="w-5 h-5 text-amber-500" /> {category}
                     </h2>
-                    <p className="text-gray-600 leading-relaxed">
+                    <p className="text-gray-600 leading-relaxed wrap-break-word whitespace-pre-line">
                         {description}
                     </p>
                 </div>
