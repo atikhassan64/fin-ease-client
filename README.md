@@ -1,7 +1,7 @@
 # 💰 FinEase – Personal Finance Management App
 
 **Live Site URL:** [https://finease-397b3.web.app](https://finease-397b3.web.app)  
-**Server Hosted On:** [https://finees-server.vercel.app](https://finees-server.vercel.app)
+**Server Hosted On:** [https://fin-ease-server-three.vercel.app](https://fin-ease-server-three.vercel.app/)
 
 ---
 
