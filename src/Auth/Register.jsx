@@ -125,7 +125,7 @@ const Register = () => {
                                 placeholder="Password"
                                 required
                             />
-                            <div onClick={() => setToggle(!toggle)} className='absolute text-primary ml-68 md:ml-70'>
+                            <div onClick={() => setToggle(!toggle)} className='absolute text-primary ml-66 md:ml-70'>
                                 {
                                     toggle ?
                                         <FaEyeSlash className='' size={20}></FaEyeSlash>
