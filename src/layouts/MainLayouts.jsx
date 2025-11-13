@@ -1,10 +1,21 @@
-import React from 'react';
+import React, { use } from 'react';
 import NavBar from '../components/NavBar';
 import { Outlet } from 'react-router';
 import Footer from '../components/Footer';
 import { Toaster } from 'react-hot-toast';
+import { AuthContext } from '../context/AuthContext';
+import Loading from '../components/Loading';
 
 const MainLayouts = () => {
+    // const { loading } = use(AuthContext);
+    // if(loading){
+    //     return <Loading></Loading>
+    // }
+    const { loading } = use(AuthContext);
+
+    if (loading) {
+        return <Loading />
+    }
     return (
         <div className='flex flex-col min-h-screen'>
             <header className='bg-base-100 shadow-sm'>

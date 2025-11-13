@@ -1,6 +1,7 @@
 import React, { use, useEffect, useState } from 'react';
 import { ArrowUpCircle, ArrowDownCircle, Wallet } from "lucide-react";
 import { AuthContext } from '../context/AuthContext';
+import Loading from './Loading';
 
 
 
@@ -32,8 +33,6 @@ const Overview = () => {
     }, [user])
 
     const totalBalance = totalIncome - totalExpense;
-
-
 
     return (
         <div className='max-w-[1200px] mx-auto py-10 px-6 lg:px-0'>

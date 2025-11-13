@@ -6,7 +6,7 @@ import { FaXTwitter } from 'react-icons/fa6';
 
 const Footer = () => {
     return (
-        <footer className="border-t border-amber-100 text-secondary py-10 mt-10">
+        <footer className="border-t border-amber-100 text-secondary pt-10 mt-10">
             <div className="max-w-[1200px] mx-auto px-6 grid md:grid-cols-4 sm:grid-cols-2 gap-8">
 
                 
@@ -74,7 +74,7 @@ const Footer = () => {
             </div>
 
         
-            <div className="text-center text-sm text-secondary mt-10 border-t border-amber-100 pt-4">
+            <div className="text-center text-sm text-secondary mt-10 border-t border-amber-100 py-4">
                 © {new Date().getFullYear()} FinEase. All rights reserved.
             </div>
         </footer>

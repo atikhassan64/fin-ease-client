@@ -14,7 +14,8 @@ const AddTransaction = () => {
         const email = user.email;
         const amount = e.target.amount.value;
         const description = e.target.description.value;
-        
+
+
 
         const newTransaction = {
             type: type,
@@ -36,6 +37,7 @@ const AddTransaction = () => {
             .then(res => res.json())
             .then(data => {
                 console.log('after data :', data)
+                e.target.reset();
                 toast.success('Add Transaction Success');
             })
     }

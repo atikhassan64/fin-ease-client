@@ -3,12 +3,13 @@ import logo from '../assets/FinEase-logo.png'
 import { Link, NavLink } from 'react-router';
 import { AuthContext } from '../context/AuthContext';
 import toast from 'react-hot-toast';
+import { LogOut } from 'lucide-react';
 
 const NavBar = () => {
 
     const { user, logOutUser } = use(AuthContext);
     const [show, setShow] = useState(false);
-    
+
     const handleLogOut = () => {
         logOutUser()
             .then(() => {
@@ -25,9 +26,7 @@ const NavBar = () => {
         <li><NavLink className={`hover:bg-accent font-medium text-gray-500 hover:text-primary`} to={`/my-transactions`}>My Transactions</NavLink></li>
         <li><NavLink className={`hover:bg-accent font-medium text-gray-500 hover:text-primary`} to={`/reports`}>Reports</NavLink></li>
 
-        {
-            user && <li><NavLink className={`hover:bg-accent font-medium text-gray-500 hover:text-primary`} to={`/profile`}>My Profile</NavLink></li>
-        }
+
 
     </div>
     return (
@@ -60,20 +59,43 @@ const NavBar = () => {
                                     <div className='absolute z-50 '>
                                         {
                                             show &&
-                                            <div className='dropdown-content bg-base-100 rounded-sm z-1 mt-48 w-60 border border-amber-100 shadow-lg md:w-70 py-4'>
-                                                <div className='flex items-center justify-start px-4'>
-                                                    <div className='h-12 w-12 rounded-full hidden md:block'>
-                                                        <img src={user.photoURL} alt={user.displayName} className={`h-12 w-12 rounded-full cursor-pointer object-cover`} />
+                                            <div className="relative inline-block text-left">
+
+                                                {/* Dropdown Menu */}
+                                                <div className="absolute right-0 mt-5 w-64 bg-white border border-gray-200 rounded-lg shadow-lg z-50">
+                                                    <div className="p-4 flex items-center space-x-3">
+                                                        <img
+                                                            src={user.photoURL}
+                                                            alt={user.displayName}
+                                                            className="h-12 w-12 rounded-full object-cover"
+                                                        />
+                                                        <div className="flex-1 min-w-0">
+                                                            <p className="text-sm font-semibold text-gray-900 truncate">
+                                                                {user.displayName}
+                                                            </p>
+                                                            <p className="text-xs text-gray-500 truncate line-clamp-1">
+                                                                {user.email}
+                                                            </p>
+                                                        </div>
                                                     </div>
-                                                    <div className='ml-4'>
-                                                        <h2 className='text-sm md:text-lg font-normal md:font-medium text-secondary cursor-pointer line-clamp-1'>{user.displayName}</h2>
-                                                        <p className='text-sm cursor-pointer line-clamp-1'>
-                                                            {user.email}
-                                                        </p>
-                                                    </div>
-                                                </div>
-                                                <div onClick={handleLogOut} className='w-full hover:bg-accent py-2 cursor-pointer mt-4 bg-accent px-4'>
-                                                    <Link  to={`/login`} className="text-sm md:text-lg font-normal md:font-medium text-secondary ">Sign Out</Link>
+
+                                                    <div className="border-t border-amber-100"></div>
+
+                                                    
+                                                        {
+                                                            user && <NavLink className={` w-full text-left px-4 py-3 text-sm text-gray-500
+                                                        font-medium hover:text-primary hover:bg-gray-50 flex items-center space-x-2 rounded-b-lg cursor-pointer`} to={`/profile`}>My Profile</NavLink>
+                                                        }
+                                                    
+                                                    <Link
+                                                        to={`/`}
+                                                        className="w-full text-left px-4 py-3 text-sm text-gray-500
+                                                        font-medium hover:text-primary hover:bg-gray-50 flex items-center space-x-2 rounded-b-lg cursor-pointer border-t border-amber-100"
+                                                        onClick={handleLogOut}
+                                                    >
+                                                        <LogOut className="h-4 w-4" />
+                                                        <span>Sign Out</span>
+                                                    </Link>
                                                 </div>
                                             </div>
                                         }

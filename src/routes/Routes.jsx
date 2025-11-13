@@ -9,6 +9,8 @@ import AddTransaction from "../pages/Transactions/AddTransaction";
 import Reports from "../pages/Transactions/Reports";
 import Details from "../pages/Transactions/Details";
 import Profile from "../pages/MyProfile/Profile";
+import ForgetPassword from "../components/ForgetPassword";
+import ErrorPage from "../components/ErrorPage";
 
 export const router = createBrowserRouter([
     {
@@ -47,7 +49,15 @@ export const router = createBrowserRouter([
             {
                 path: 'profile',
                 element: <PrivateRoute><Profile></Profile></PrivateRoute>
+            },
+            {
+                path: 'forget-password',
+                element: <ForgetPassword></ForgetPassword>
             }
         ]
+    },
+    {
+        path: "*",
+        element: <ErrorPage></ErrorPage>
     }
 ])

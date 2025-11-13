@@ -11,16 +11,22 @@ const TransactionDetails = () => {
     console.log(transaction, totalCategoryAmount)
 
     useEffect(() => {
+        
         fetch(`http://localhost:3000/transactions/${id}`)
             .then(res => res.json())
             .then(data => {
                 setTransaction(data);
 
-                fetch(`http://localhost:3000/transactions?category=${data.category}`)
+             
+                fetch(`http://localhost:3000/transactions`)
                     .then(res => res.json())
                     .then(transactions => {
-                        const total = transactions.reduce(
-                            (sum, t) => sum + parseFloat(t.amount),
+                        const sameCategory = transactions.filter(
+                            t => t.category === data.category
+                        );
+                       
+                        const total = sameCategory.reduce(
+                            (sum, t) => sum + Number(t.amount || 0),
                             0
                         );
                         setTotalCategoryAmount(total);
@@ -29,11 +35,11 @@ const TransactionDetails = () => {
     }, [id]);
 
     return (
-        <div className="max-w-[1200px] mx-auto px-6 lg:px-80 mt-10">
+        <div className="max-w-[1200px] mx-auto px-6 md:px-80 mt-10">
             {/* Back Button */}
             <button
                 onClick={() => window.history.back()}
-                className="flex items-center gap-2 text-primary hover:text-secondary mb-6 transition"
+                className="flex items-center gap-2 text-primary hover:text-secondary mb-6 transition cursor-pointer"
             >
                 <ArrowLeft className="w-5 h-5" />
                 <span>Back to Transactions</span>

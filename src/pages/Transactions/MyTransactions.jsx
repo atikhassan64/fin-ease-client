@@ -1,7 +1,7 @@
 import React, { use, useEffect, useRef, useState } from 'react';
 import { AuthContext } from '../../context/AuthContext';
 import Swal from 'sweetalert2';
-import { Link } from 'react-router';
+import { Link, useNavigate } from 'react-router';
 import toast from 'react-hot-toast';
 
 const MyTransactions = () => {
@@ -10,6 +10,7 @@ const MyTransactions = () => {
     const updateRef = useRef(null);
     const [id, setId] = useState(null);
     const [sortBy, setSortBy] = useState("default");
+    const navigate = useNavigate();
 
 
     useEffect(() => {
@@ -59,9 +60,11 @@ const MyTransactions = () => {
                     // setTransaction(modifyTransaction);
 
                     setTransaction(prev => prev.map(t => t._id === id ? { ...t, ...newUpdate } : t));
+                    navigate(`/details/${id}`);
                 }
                 updateRef.current.close();
-                toast.success('Transaction Updated')
+                toast.success('Transaction Updated');
+                
             })
     }
 
