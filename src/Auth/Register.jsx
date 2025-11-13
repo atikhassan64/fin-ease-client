@@ -79,7 +79,7 @@ const Register = () => {
         </div>
     );
     return (
-        <div className='flex justify-center items-center mt-10 md:min-h-screen max-w-11/12 mx-auto'>
+        <div className='flex justify-center items-center mt-10 md:min-h-screen mx-2 max-w-[1200px] md:mx-auto'>
             <div className="card bg-base-100 w-full md:max-w-sm shrink-0 shadow-2xl border border-accent">
                 <form onSubmit={handleRegister} className="card-body mt-4">
                     {/* Google */}
@@ -125,7 +125,7 @@ const Register = () => {
                                 placeholder="Password"
                                 required
                             />
-                            <div onClick={() => setToggle(!toggle)} className='absolute text-primary ml-64 md:ml-70'>
+                            <div onClick={() => setToggle(!toggle)} className='absolute text-primary ml-66 md:ml-70'>
                                 {
                                     toggle ?
                                         <FaEyeSlash className='' size={20}></FaEyeSlash>
