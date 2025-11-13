@@ -88,7 +88,7 @@ const Login = () => {
         </div>
     );
     return (
-        <div className=' max-w-[1200px] mx-auto my-20 rounded-lg px-4 md:px-0 flex justify-center items-center py-10 md:min-h-screen '>
+        <div className=' max-w-[1200px] mx-auto my-20 rounded-lg px-2 md:px-0 flex justify-center items-center py-10 md:min-h-screen '>
             <div className="card bg-base-100 w-full md:max-w-sm shrink-0 border border-accent shadow-xl">
                 <form onSubmit={handleSignIn} className="card-body mt-4">
                     {/* Google */}
@@ -121,7 +121,7 @@ const Login = () => {
                                 placeholder="Password"
                                 required
                             />
-                            <div onClick={() => setToggle(!toggle)} className='absolute text-primary ml-66 md:ml-70'>
+                            <div onClick={() => setToggle(!toggle)} className='absolute text-primary ml-64 md:ml-70'>
                                 {
                                     toggle ?
                                         <FaEyeSlash className='' size={20}></FaEyeSlash>
