@@ -32,39 +32,39 @@ const Overview = () => {
 
     return (
         <div className='max-w-[1200px] mx-auto py-10 px-6 lg:px-0'>
-            <h2 className='font-semibold text-xl md:text-2xl text-primary mb-4 '>Transactions Overview</h2>
+            <h2 className='font-semibold text-xl md:text-2xl text-primary-content mb-4 '>Transactions Overview</h2>
             <div className=" grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
 
                 
-                <div className="bg-white border-l-5 border-primary shadow-sm p-6 rounded-lg  hover:shadow-md transition flex justify-between">
+                <div className="bg-base-200 border-l-5 border-primary-content shadow-sm p-6 rounded-lg  hover:shadow-md transition flex justify-between">
                     <div>
                         <h3 className="text-gray-500 text-sm font-medium mb-1">Total Balance</h3>
-                        <p className="text-2xl font-semibold text-primary mt-1 mb-1">
+                        <p className="text-2xl font-semibold text-primary-content mt-1 mb-1">
                             ৳ {totalBalance}
                         </p>
                         <h3 className="text-gray-500 text-sm font-medium mb-1">Net balance from all transactions</h3>
                     </div>
                     <div className="flex justify-center mb-2">
-                        <Wallet className="w-8 h-8 text-primary" />
+                        <Wallet className="w-8 h-8 text-primary-content" />
                     </div>
                 </div>
 
                
-                <div className="bg-white border-l-5 border-primary shadow-sm p-6 rounded-lg  hover:shadow-md transition flex justify-between">
+                <div className="bg-base-200 border-l-5 border-primary-content shadow-sm p-6 rounded-lg  hover:shadow-md transition flex justify-between">
                     <div>
                         <h3 className="text-gray-500 text-sm font-medium mb-1">Total Income</h3>
-                        <p className="text-2xl font-semibold text-primary mt-1 mb-1">
+                        <p className="text-2xl font-semibold text-primary-content mt-1 mb-1">
                             ৳ {totalIncome}
                         </p>
                         <h3 className="text-gray-500 text-sm font-medium mb-1">Income transactions</h3>
                     </div>
                     <div className="flex justify-center mb-2">
-                        <ArrowUpCircle className="w-8 h-8 text-primary" />
+                        <ArrowUpCircle className="w-8 h-8 text-primary-content" />
                     </div>
                 </div>
 
               
-                <div className="bg-white border-l-5 border-red-600 shadow-sm p-6 rounded-lg  hover:shadow-md transition flex justify-between">
+                <div className="bg-base-200 border-l-5 border-red-600 shadow-sm p-6 rounded-lg hover:shadow-md transition flex justify-between">
                     <div>
                         <h3 className="text-gray-500 text-sm font-medium mb-1">Total Expense</h3>
                         <p className="text-2xl font-semibold text-red-600 mt-1 mb-1">

@@ -35,21 +35,20 @@ const TransactionDetails = () => {
 
     return (
         <div className="max-w-[1200px] mx-auto px-6 md:px-80 mt-10">
-            {/* Back Button */}
             <button
                 onClick={() => window.history.back()}
-                className="flex items-center gap-2 text-primary hover:text-secondary mb-6 transition cursor-pointer"
+                className="flex items-center gap-2 text-primary-content hover:text-secondary-content mb-6 transition cursor-pointer"
             >
                 <ArrowLeft className="w-5 h-5" />
                 <span>Back to Transactions</span>
             </button>
 
             {/* Details Card */}
-            <div className="bg-white rounded-lg shadow-md border border-amber-100 p-8">
+            <div className="bg-base-100 rounded-lg shadow-md border border-amber-100 p-8">
                 {/* Header */}
                 <div className="flex justify-between items-center mb-6">
                     <span
-                        className={`px-4 py-1 rounded-full text-sm font-semibold bg-accent text-primary`}
+                        className={`px-4 py-1 rounded-full text-sm font-semibold bg-accent-content text-primary-content`}
                     >
                         {type}
                     </span>
@@ -60,7 +59,7 @@ const TransactionDetails = () => {
 
                 {/* Main Info */}
                 <div className="mb-5">
-                    <h2 className="text-xl font-semibold text-secondary mb-2 flex items-center gap-2">
+                    <h2 className="text-xl font-semibold text-secondary-content mb-2 flex items-center gap-2">
                         <Tag className="w-5 h-5 text-amber-500" /> {category}
                     </h2>
                     <p className="text-gray-600 leading-relaxed wrap-break-word whitespace-pre-line">
@@ -69,9 +68,9 @@ const TransactionDetails = () => {
                 </div>
 
                 {/* Amount Section */}
-                <div className="bg-accent rounded-xl p-4 mb-6">
+                <div className="bg-accent-content rounded-xl p-4 mb-6">
                     <h3 className="text-gray-500 text-sm mb-1">Amount</h3>
-                    <p className="text-3xl font-bold text-primary flex items-center gap-2">
+                    <p className="text-3xl font-bold text-primary-content flex items-center gap-2">
                         <Wallet className="w-6 h-6" /> ৳ {amount}
                     </p>
                 </div>
@@ -81,7 +80,7 @@ const TransactionDetails = () => {
                     <h3 className="text-gray-500 text-sm mb-1">
                         Total Amount in this Category
                     </h3>
-                    <p className="text-2xl font-semibold text-secondary">৳ {totalCategoryAmount}</p>
+                    <p className="text-2xl font-semibold text-secondary-content">৳ {totalCategoryAmount}</p>
                 </div>
             </div>
         </div>

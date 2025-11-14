@@ -42,11 +42,11 @@ const Budgeting = () => {
     return (
         <div className="min-h-screen bg-base-200 py-10 px-6">
             <div className='max-w-[1200px] mx-auto'>
-                <h2 className='font-semibold text-xl md:text-2xl text-primary mb-4 '>Budgeting Tips</h2>
+                <h2 className='font-semibold text-xl md:text-2xl text-primary-content mb-4 '>Budgeting Tips</h2>
                 <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-                <div className="lg:col-span-1 bg-white rounded-2xl p-6 shadow-sm border border-amber-100">
+                <div className="lg:col-span-1 bg-base-100 rounded-2xl p-6 shadow-sm border border-amber-100">
                     <div className="flex items-start gap-4">
-                        <div className="rounded-lg bg-primary p-3">
+                        <div className="rounded-lg bg-primary-content p-3">
                             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" className="text-white">
                                 <path d="M3 12h18" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
                                 <path d="M6 8h12" stroke="white" strokeWidth="1.5" strokeLinecap="round" />
@@ -54,7 +54,7 @@ const Budgeting = () => {
                             </svg>
                         </div>
                         <div>
-                            <h1 className="text-xl font-semibold text-secondary">Budgeting Tips</h1>
+                            <h1 className="text-xl font-semibold text-secondary-content">Budgeting Tips</h1>
                             <p className="text-sm text-gray-500 mt-1">
                                 Practical advice to manage income, cut unnecessary spending and grow savings.
                             </p>
@@ -62,13 +62,13 @@ const Budgeting = () => {
                     </div>
 
                     <div className="mt-6 grid grid-cols-2 gap-3">
-                        <div className="p-3 bg-accent rounded-lg border border-amber-100">
+                        <div className="p-3 bg-accent-content rounded-lg border border-amber-100">
                             <p className="text-xs text-gray-500">Monthly Income</p>
-                            <p className="mt-1 font-medium text-secondary">৳ 80,000</p>
+                            <p className="mt-1 font-medium text-secondary-content">৳ 80,000</p>
                         </div>
-                        <div className="p-3 bg-accent rounded-lg border border-amber-100">
+                        <div className="p-3 bg-accent-content rounded-lg border border-amber-100">
                             <p className="text-xs text-gray-500">Saved This Month</p>
-                            <p className="mt-1 font-medium text-secondary">৳ 12,300</p>
+                            <p className="mt-1 font-medium text-secondary-content">৳ 12,300</p>
                         </div>
                     </div>
 
@@ -94,7 +94,7 @@ const Budgeting = () => {
                         </div>
                     </div>
 
-                    <button className="mt-6 w-full py-2 rounded-md btn btn-outline border-amber-100 text-gray-500 hover:text-primary text-sm hover:bg-accent transition">
+                    <button className="mt-6 w-full py-2 rounded-md btn btn-outline border-amber-100 text-gray-500 hover:text-primary-content text-sm hover:bg-accent-content transition">
                         Start a Budget Plan
                     </button>
                 </div>
@@ -102,17 +102,17 @@ const Budgeting = () => {
 
                 <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-3 gap-6">
                     <div className="md:col-span-2 space-y-4">
-                        <div className="bg-white rounded-2xl p-5 shadow-sm border border-amber-100">
-                            <h2 className="text-lg font-semibold text-secondary">Top Tips</h2>
+                        <div className="bg-base-100 rounded-2xl p-5 shadow-sm border border-amber-100">
+                            <h2 className="text-lg font-semibold text-secondary-content">Top Tips</h2>
                             <p className="text-sm text-gray-500 mt-1">Handy, quick-to-apply budgeting tips to improve finances.</p>
 
                             <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 gap-4">
                                 {tips.map((tip) => (
-                                    <div key={tip.id} className="p-4 bg-accent rounded-lg border border-amber-100">
+                                    <div key={tip.id} className="p-4 bg-accent-content rounded-lg border border-amber-100">
                                         <div>
                                             <div className="flex items-start justify-between gap-3">
-                                                <h3 className="text-sm font-semibold text-secondary">{tip.title}</h3>
-                                                <span className="text-xs font-medium px-2 py-1 rounded-full bg-white border text-primary">
+                                                <h3 className="text-sm font-semibold text-secondary-content">{tip.title}</h3>
+                                                <span className="text-xs font-medium px-2 py-1 rounded-full bg-base-100 border text-primary-content">
                                                     {tip.tag}
                                                 </span>
 
@@ -127,8 +127,8 @@ const Budgeting = () => {
                         </div>
 
                         
-                        <div className="bg-white rounded-2xl p-5 shadow-sm border border-amber-100">
-                            <h3 className="text-sm font-semibold text-secondary">30-Minute Budget Tune-up</h3>
+                        <div className="bg-base-100 rounded-2xl p-5 shadow-sm border border-amber-100">
+                            <h3 className="text-sm font-semibold text-secondary-content">30-Minute Budget Tune-up</h3>
                             <ul className="mt-3 space-y-2 text-sm text-gray-500">
                                 <li className="flex items-start gap-3">
                                     <input type="checkbox" className="mt-1" disabled />
@@ -148,8 +148,8 @@ const Budgeting = () => {
 
                     <div className="space-y-4">
                         <div className=" rounded-2xl p-5 shadow-sm border border-amber-100">
-                            <h4 className="text-sm font-semibold text-primary">Featured</h4>
-                            <h3 className="mt-2 font-semibold text-secondary">Automate Your Savings</h3>
+                            <h4 className="text-sm font-semibold text-primary-content">Featured</h4>
+                            <h3 className="mt-2 font-semibold text-secondary-content">Automate Your Savings</h3>
                             <p className="text-sm text-gray-600 mt-1">
                                 Move a fixed percentage of every paycheck to savings automatically.
                             </p>
@@ -161,8 +161,8 @@ const Budgeting = () => {
                             </div>
                         </div>
 
-                        <div className="bg-white rounded-2xl p-4 shadow-sm border border-amber-100">
-                            <h5 className="text-sm font-semibold text-secondary">Quick Resources</h5>
+                        <div className="bg-base-100 rounded-2xl p-4 shadow-sm border border-amber-100">
+                            <h5 className="text-sm font-semibold text-secondary-content">Quick Resources</h5>
                             <ul className="mt-3 text-sm text-gray-500 space-y-2">
                                 <li className="flex items-center gap-2">
                                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12h14" stroke="#6B7280" strokeWidth="1.5" strokeLinecap="round" /></svg>

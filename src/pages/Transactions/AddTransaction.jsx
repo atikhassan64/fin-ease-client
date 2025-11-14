@@ -43,8 +43,8 @@ const AddTransaction = () => {
 
     return (
         <div className='max-w-[1200px] mx-auto px-6 md:px-20'>
-            <div className=" mx-auto mt-10 p-6 bg-white rounded-xl shadow-lg border border-amber-100">
-                <h2 className="text-2xl font-semibold mb-6 text-primary">
+            <div className=" mx-auto mt-10 p-6 bg-base-100 rounded-xl shadow-lg border border-amber-100">
+                <h2 className="text-2xl font-semibold mb-6 text-primary-content">
                     Add Transaction
                 </h2>
                 <form onSubmit={handleSubmit} className="">
@@ -52,14 +52,14 @@ const AddTransaction = () => {
                         {/* Left */}
                         <div className='flex-1'>
                             {/* Type */}
-                            <label className="label">Type</label>
-                            <select name='type' className="w-full border border-amber-100 p-2 mb-4 outline-none ">
+                            <label className="label text-gray-500">Type</label>
+                            <select name='type' className="w-full border bg-base-100 border-amber-100 p-2 mb-4 outline-none ">
                                 <option>Income</option>
                                 <option>Expense</option>
                             </select>
 
                             {/* Name */}
-                            <label className="label">Name</label>
+                            <label className="label text-gray-500">Name</label>
                             <input
                                 type="text"
                                 name='name'
@@ -70,7 +70,7 @@ const AddTransaction = () => {
                             />
 
                             {/* Date */}
-                            <label className="label">Date</label>
+                            <label className="label text-gray-500">Date</label>
                             <input
                                 required
                                 type="date"
@@ -82,12 +82,12 @@ const AddTransaction = () => {
                         {/* Right */}
                         <div className='flex-1'>
                             {/* Category */}
-                            <label className="label">Category</label>
+                            <label className="label text-gray-500">Category</label>
                             <select
                                 name="category"
                                 required
                                 defaultValue=""
-                                className="w-full border p-2 border-amber-100 mb-4 outline-none"
+                                className="w-full border p-2 bg-base-100 border-amber-100 mb-4 outline-none"
                             >
                                 <option value="" disabled hidden>
                                     Select Category
@@ -100,7 +100,7 @@ const AddTransaction = () => {
                             </select>
 
                             {/* Email */}
-                            <label className="label">Email</label>
+                            <label className="label text-gray-500">Email</label>
                             <input
                                 type="email"
                                 name='email'
@@ -111,7 +111,7 @@ const AddTransaction = () => {
                             />
 
                             {/* Amount */}
-                            <label className="label">Amount</label>
+                            <label className="label text-gray-500">Amount</label>
                             <input
                                 type="number"
                                 name='amount'
@@ -123,7 +123,7 @@ const AddTransaction = () => {
                     </div>
 
                     {/* Description */}
-                    <label className="label mt-5">Description</label>
+                    <label className="label mt-5 text-gray-500">Description</label>
                     <textarea
                         name='description'
                         required
@@ -135,7 +135,7 @@ const AddTransaction = () => {
                     <input
                         type="submit"
                         value="Add Transaction"
-                        className='btn btn-outline w-full border-amber-100 hover:bg-accent mt-4'
+                        className='btn btn-outline w-full border-amber-100 hover:bg-accent-content mt-4'
                     />
                 </form>
             </div>

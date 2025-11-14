@@ -101,14 +101,14 @@ const MyTransactions = () => {
         <div className="max-w-[1200px] mx-auto mt-10 px-6 lg:px-0">
 
             <div className='flex justify-between items-center'>
-                <h2 className="text-2xl font-semibold mb-6 text-primary">
+                <h2 className="text-2xl font-semibold mb-6 text-primary-content">
                     My Transactions
                 </h2>
                 <div className="flex gap-4 mb-6">
                     <select
                         value={sortBy}
                         onChange={(e) => setSortBy(e.target.value)}
-                        className="border border-amber-100 px-3 py-2 rounded"
+                        className="border bg-base-100 border-amber-100 px-3 py-2 rounded"
                     >
                         <option value="default">Sort By</option>
                         <option value="date">Date</option>
@@ -122,34 +122,34 @@ const MyTransactions = () => {
                     transactions.map(transaction => (
                         <div
                             key={transaction._id}
-                            className="bg-white rounded-lg shadow-md p-5 border border-amber-100 hover:shadow-xl transition"
+                            className="bg-base-100 rounded-lg shadow-md p-5 border border-amber-100 hover:shadow-xl transition"
                         >
                             <div className="flex justify-between items-center mb-2">
                                 <span
                                     className={`px-3 py-1 rounded-full text-sm font-medium ${transaction.type === "Income"
-                                        ? "bg-accent text-primary"
-                                        : "bg-accent text-secondary"
+                                        ? "bg-accent-content text-primary-content"
+                                        : "bg-accent-content text-secondary-content"
                                         }`}
                                 >
                                     {transaction.type}
                                 </span>
-                                <span className="text-secondary text-sm">{transaction.date}</span>
+                                <span className="text-secondary-content text-sm">{transaction.date}</span>
                             </div>
 
-                            <h3 className="text-lg font-semibold text-secondary">
+                            <h3 className="text-lg font-semibold text-secondary-content">
                                 {transaction.category}
                             </h3>
-                            <p className="text-primary mt-1 mb-3">৳ {transaction.amount}</p>
+                            <p className="text-primary-content mt-1 mb-3">৳ {transaction.amount}</p>
 
                             {/* Buttons */}
                             <div className="flex justify-between gap-2">
-                                <button onClick={() => handleUpdate(transaction._id)} className="flex-1 btn btn-outline text-primary border-primary hover:text-white hover:bg-primary transition">
+                                <button onClick={() => handleUpdate(transaction._id)} className="flex-1 btn btn-outline text-primary-content border-primary-content hover:text-base-100 hover:bg-primary-content transition">
                                     Update
                                 </button>
-                                <button onClick={() => handleDelete(transaction._id)} className="flex-1 btn btn-outline text-secondary border-amber-100 hover:bg-accent transition">
+                                <button onClick={() => handleDelete(transaction._id)} className="flex-1 btn btn-outline text-secondary-content border-amber-100 hover:bg-accent-content transition">
                                     Delete
                                 </button>
-                                <Link to={`/details/${transaction._id}`} className="flex-1 btn btn-outline text-primary border-primary hover:text-white hover:bg-primary transition">
+                                <Link to={`/details/${transaction._id}`} className="flex-1 btn btn-outline text-primary-content border-primary-content hover:text-base-100 hover:bg-primary-content transition">
                                     Details
                                 </Link>
                             </div>
@@ -161,20 +161,20 @@ const MyTransactions = () => {
             {/* Update modal */}
             <dialog ref={updateRef} className="modal modal-bottom sm:modal-middle">
                 <div className="modal-box w-10/12">
-                    <h3 className="font-bold text-lg mb-4 text-primary">Update Transaction</h3>
+                    <h3 className="font-bold text-lg mb-4 text-primary-content">Update Transaction</h3>
                     <form onSubmit={handleUpdateTransaction} className="">
                         <div className='flex justify-between items-center gap-4'>
                             {/* Left */}
                             <div className='flex-1'>
                                 {/* Type */}
-                                <label className="label">Type</label>
-                                <select name='type' className="w-full border border-amber-100 p-2 mb-4 outline-none ">
+                                <label className="label text-gray-500">Type</label>
+                                <select name='type' className="w-full border border-amber-100 bg-base-100 p-2 mb-4 outline-none ">
                                     <option>Income</option>
                                     <option>Expense</option>
                                 </select>
 
                                 {/* Date */}
-                                <label className="label">Date</label>
+                                <label className="label text-gray-500">Date</label>
                                 <input
                                     type="date"
                                     required
@@ -186,12 +186,12 @@ const MyTransactions = () => {
                             {/* Right */}
                             <div className='flex-1'>
                                 {/* Category */}
-                                <label className="label">Category</label>
+                                <label className="label text-gray-500">Category</label>
                                 <select
                                     name="category"
                                     required
                                     defaultValue=""
-                                    className="w-full border p-2 border-amber-100 mb-4 outline-none"
+                                    className="w-full border bg-base-100 p-2 border-amber-100 mb-4 outline-none"
                                 >
                                     <option value="" disabled hidden>
                                         Select Category
@@ -204,7 +204,7 @@ const MyTransactions = () => {
                                 </select>
 
                                 {/* Amount */}
-                                <label className="label">Amount</label>
+                                <label className="label text-gray-500">Amount</label>
                                 <input
                                     type="number"
                                     required
@@ -216,7 +216,7 @@ const MyTransactions = () => {
                         </div>
 
                         {/* Description */}
-                        <label className="label mt-5">Description</label>
+                        <label className="label mt-5 text-gray-500">Description</label>
                         <textarea
                             name='description'
                             required
@@ -228,12 +228,11 @@ const MyTransactions = () => {
                         <input
                             type="submit"
                             value="Update Transaction"
-                            className='btn btn-outline w-full border-amber-100 hover:bg-accent mt-4 text-secondary'
+                            className='btn btn-outline w-full border-amber-100 hover:bg-accent-content mt-4 text-secondary-content'
                         />
                     </form>
                     <div className="modal-action">
                         <form method="dialog">
-                            {/* if there is a button in form, it will close the modal */}
                             <button className="btn">Close</button>
                         </form>
                     </div>

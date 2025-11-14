@@ -43,7 +43,7 @@ const Reports = () => {
     return (
         <div className="max-w-6xl mx-auto px-6 py-10">
             <div className="flex justify-between items-center mb-8">
-                <h2 className="text-2xl font-semibold text-primary">Financial Reports</h2>
+                <h2 className="text-2xl font-semibold text-primary-content">Financial Reports</h2>
 
       
                 <div className="flex items-center gap-2">
@@ -51,7 +51,7 @@ const Reports = () => {
                     <select
                         value={selectedMonth}
                         onChange={e => setSelectedMonth(e.target.value)}
-                        className="border border-amber-100 rounded-lg p-2 outline-none"
+                        className="border bg-base-100 border-amber-100 rounded-lg p-2 outline-none"
                     >
                         <option value="All" >All Months</option>
                         {Array.from({ length: 12 }, (_, i) => (
@@ -66,8 +66,8 @@ const Reports = () => {
      
             <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
                 
-                <div className="bg-white border border-amber-100 rounded-xl shadow p-6">
-                    <h3 className="text-lg font-semibold mb-4 text-secondary">
+                <div className="bg-base-100 border border-amber-100 rounded-xl shadow p-6">
+                    <h3 className="text-lg font-semibold mb-4 text-secondary-content">
                         Category-wise Summary
                     </h3>
                     <ResponsiveContainer width="100%" height={300}>
@@ -92,8 +92,8 @@ const Reports = () => {
                 </div>
 
                
-                <div className="bg-white border border-amber-100 rounded-xl shadow p-6">
-                    <h3 className="text-lg font-semibold mb-4 text-secondary">
+                <div className="bg-base-100 border border-amber-100 rounded-xl shadow p-6">
+                    <h3 className="text-lg font-semibold mb-4 text-secondary-content">
                         Monthly Totals
                     </h3>
                     <ResponsiveContainer width="100%" height={300}>

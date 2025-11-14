@@ -42,7 +42,7 @@ const ForgetPassword = () => {
         <div>
             <div className='flex justify-center items-center mt-15 max-w-11/12 mx-auto'>
                 <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
-                    <h2 className='pt-6 text-center font-semibold text-2xl text-primary '>Recover Your Password</h2>
+                    <h2 className='pt-6 text-center font-semibold text-2xl text-primary-content '>Recover Your Password</h2>
                     <form onSubmit={handleForgetPassword} className="card-body">
                         <fieldset className="fieldset">
                             <label className="label">Email</label>
@@ -54,7 +54,7 @@ const ForgetPassword = () => {
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
                             />
-                            <button type='submit' className="btn mt-4 btn-primary">Recover</button>
+                            <button type='submit' className="btn mt-4 btn-primary-content">Recover</button>
                         </fieldset>
                         <p className='text-red-500'><small>{message}</small></p>
                     </form>
