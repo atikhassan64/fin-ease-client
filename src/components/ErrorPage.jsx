@@ -6,7 +6,7 @@ const ErrorPage = () => {
     return (
         <div>
             <div className='bg-accent'>
-                <div className='max-w-[1200px] mx-auto py-[70px] h-screen flex justify-center items-center px-6 md:px-0 '>
+                <div className='max-w-[1200px] mx-auto py-[69px] h-screen flex justify-center items-center px-6 md:px-0 '>
                     <div>
                         <img src={errorImg} alt="" className='mx-auto px-6 ' />
                         <h1 className=' font-semibold text-secondary text-[30px] md:text-[48px] text-center  '>Page not found!</h1>
