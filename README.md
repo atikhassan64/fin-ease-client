@@ -71,7 +71,9 @@ npm run dev
 ## 🌈 Screenshots
 
 ### Home Screen
-![Home Screen](https://ibb.co.com/HDP6qX3b)
+![Home Screen](https://i.ibb.co.com/wNQV4YjP/Home-page.png)
+
+
 
 
 
