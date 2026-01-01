@@ -133,7 +133,7 @@ const Login = () => {
                         {/* Forget btn */}
                         <div><button onClick={handleForgetPage} className="link link-hover">Forgot password?</button></div>
                         {/* Login btn */}
-                        <button type='submit' className="btn btn-primary-content mt-4">Sign In</button>
+                        <button type='submit' className="button mt-4">Sign In</button>
                     </fieldset>
                     <p className='text-red-500 mt-2'><small>{error}</small></p>
                     <p className='text-center font-medium text-secondary-content '>Don't Have An Account ? <Link to={`/register`} className='text-primary-content font-bold'>Signup</Link></p>

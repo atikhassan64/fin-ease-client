@@ -135,7 +135,7 @@ const Register = () => {
                             </div>
                         </div>
                         {/* Signup btn */}
-                        <button type='submit' className="btn mt-4 btn-primary-content">Sign Up</button>
+                        <button type='submit' className="button mt-4">Sign Up</button>
                     </fieldset>
                     <p className='text-red-500 mt-2'><small>{error}</small></p>
                     <p className='text-center font-medium text-secondary-content'>Already Have An Account ? <Link to={`/login`} className='text-primary-content font-bold'>Sign In</Link></p>

@@ -4,8 +4,8 @@ import { PiggyBank, TrendingUp, ShieldCheck, BarChart3 } from "lucide-react";
 const FinancialPlanning = () => {
     return (
         <div>
-            <section className=" from-amber-50 to-white pt-10">
-                <div className="max-w-[1200px] mx-auto px-6 text-center">
+            <section className=" from-amber-50 to-white px-6 py-10">
+                <div className="max-w-[1200px] mx-auto text-center">
                     <h2 className="font-semibold text-xl md:text-2xl text-primary-content mb-2">
                         Why Financial Planning Matters
                     </h2>
