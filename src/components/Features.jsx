@@ -8,22 +8,22 @@ const Features = () => {
                 <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
                     <div className="p-6 bg-base-100 rounded shadow hover:shadow-lg transition">
                         <div className="text-4xl mb-4">🔐</div>
-                        <h3 className="font-semibold mb-2">Secure Authentication</h3>
+                        <h3 className="font-semibold text-primary-content mb-2">Secure Authentication</h3>
                         <p>Your data is safe with advanced encryption and login security.</p>
                     </div>
                     <div className="p-6 bg-base-100 rounded shadow hover:shadow-lg transition">
                         <div className="text-4xl mb-4">📊</div>
-                        <h3 className="font-semibold mb-2">Visual Reports</h3>
+                        <h3 className="font-semibold text-primary-content mb-2">Visual Reports</h3>
                         <p>See your finances clearly with interactive charts & graphs.</p>
                     </div>
                     <div className="p-6 bg-base-100 rounded shadow hover:shadow-lg transition">
                         <div className="text-4xl mb-4">🔄</div>
-                        <h3 className="font-semibold mb-2">Real-time Updates</h3>
+                        <h3 className="font-semibold text-primary-content mb-2">Real-time Updates</h3>
                         <p>Track your transactions instantly as they happen.</p>
                     </div>
                     <div className="p-6 bg-base-100 rounded shadow hover:shadow-lg transition">
                         <div className="text-4xl mb-4">🌙</div>
-                        <h3 className="font-semibold mb-2">Light / Dark Mode</h3>
+                        <h3 className="font-semibold text-primary-content mb-2">Light / Dark Mode</h3>
                         <p>Switch between light & dark theme for comfortable viewing.</p>
                     </div>
                 </div>

@@ -34,7 +34,7 @@ const Testimonials = () => {
   };
 
   return (
-    <section className="py-10 bg-base-100">
+    <section className="py-10 bg-base-100 px-6">
       <div className="max-w-[1200px] mx-auto text-center relative">
         <h2 className="text-2xl text-primary-content font-bold mb-8">What Our Users Say</h2>
 

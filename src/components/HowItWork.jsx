@@ -8,17 +8,17 @@ const HowItWork = () => {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     <div className="p-6 bg-base-100 rounded shadow hover:shadow-lg transition">
                         <div className="text-4xl mb-4">📝</div>
-                        <h3 className="font-semibold text-xl mb-2">Create Your Account</h3>
+                        <h3 className="font-semibold text-xl text-primary-content mb-2">Create Your Account</h3>
                         <p>Sign up quickly and securely to start your financial journey.</p>
                     </div>
                     <div className="p-6 bg-base-100 rounded shadow hover:shadow-lg transition">
                         <div className="text-4xl mb-4">💰</div>
-                        <h3 className="font-semibold text-xl mb-2">Add Income & Expenses</h3>
+                        <h3 className="font-semibold text-xl text-primary-content mb-2">Add Income & Expenses</h3>
                         <p>Keep track of every transaction for complete control over your money.</p>
                     </div>
                     <div className="p-6 bg-base-100 rounded shadow hover:shadow-lg transition">
                         <div className="text-4xl mb-4">📊</div>
-                        <h3 className="font-semibold text-xl mb-2">Track Reports & Grow Savings</h3>
+                        <h3 className="font-semibold text-xl text-primary-content mb-2">Track Reports & Grow Savings</h3>
                         <p>Visual reports help you make smarter financial decisions.</p>
                     </div>
                 </div>
