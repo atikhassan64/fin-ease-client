@@ -7,7 +7,6 @@ import { AuthContext } from '../../context/AuthContext';
 import Loading from '../../components/Loading';
 import HowItWork from '../../components/HowItWork';
 import Features from '../../components/Features';
-import ChartsPreview from '../../components/ChartsPreview';
 import Testimonials from '../../components/Testimonials';
 import CTA from '../../components/CTA';
 
