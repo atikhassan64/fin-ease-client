@@ -108,6 +108,7 @@ const Login = () => {
                             name='email'
                             className="input outline-0 "
                             placeholder="Email"
+                            defaultValue={"anguarabegump8@gmail.com"}
                             ref={emailRef}
                             required
                         />
@@ -118,6 +119,7 @@ const Login = () => {
                                 type={toggle ? "text" : "password"}
                                 name='password'
                                 className="input outline-0 "
+                                defaultValue={"123456Aa@"}
                                 placeholder="Password"
                                 required
                             />
